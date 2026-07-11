@@ -267,3 +267,110 @@ footer.site nav a { color: var(--ink-soft); }
 /* 互換: 既存ページのコンテナ名 */
 .wrap-narrow { max-width: 430px; margin: 0 auto; padding: 0 24px; position: relative; }
 a.store-badge { cursor: pointer; }
+
+/* =======================================================================
+   v3 (2026-07-12): 読み物・規約・サポートのモバイル可読性/UX強化
+   ——「クリア基調・地図×ガラス」の世界観は維持。テキストページのみ底上げ
+   ======================================================================= */
+
+/* --- 本文タイポグラフィの底上げ（.doc = 記事/privacy/support/読みもの） --- */
+.doc.wrap, .doc.wrap-narrow { max-width: 600px; padding: 0 22px; }
+@media (max-width: 400px){ .doc.wrap, .doc.wrap-narrow { padding: 0 18px; } }
+/* コンテンツページ（.docを含む）のみヘッダー/フッターも600pxに揃える（LPは無影響） */
+body:has(.doc) header.site .wrap, body:has(.doc) footer.site .wrap { max-width: 600px; }
+
+.doc p, .doc li { font-size: 16px; line-height: 1.9; letter-spacing: .01em; }
+.doc p + p { margin-top: 16px; }
+.doc ul, .doc ol { font-size: 16px; padding-left: 1.35em; margin: 12px 0; }
+.doc li + li { margin-top: 10px; }
+.doc h1 { line-height: 1.46; }
+.doc h2 {
+  font-size: 21px; font-weight: 800; line-height: 1.5;
+  margin: 48px 0 14px; padding-left: 14px; position: relative;
+}
+.doc h2::before {
+  content: ""; position: absolute; left: 0; top: .2em; bottom: .2em; width: 5px;
+  border-radius: 3px; background: linear-gradient(160deg, #4D9BFF, #2A5CC4);
+}
+.doc h3 { font-size: 17px; margin: 28px 0 8px; }
+.doc .updated {
+  display: inline-block; font-size: 12px; color: var(--ink-soft); margin-bottom: 30px;
+  background: rgba(255,255,255,.6); border: 1px solid var(--glass-border);
+  border-radius: 999px; padding: 4px 13px;
+}
+/* 本文リンク: 下線＋オフセットで“押せる”ことを明示 */
+.doc p a, .doc li a, .doc td a {
+  color: #2C5AB8; text-decoration: underline; text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px; text-decoration-color: rgba(59,111,212,.4);
+}
+.doc p a:hover, .doc li a:hover, .doc td a:hover { text-decoration-color: #2C5AB8; }
+.doc strong { font-weight: 800; }
+
+/* テーブル: 余白を広げ、右端フェードでスクロール可能を示唆 */
+.doc table { font-size: 14px; }
+.doc table th, .doc table td { padding: 12px 14px; }
+.tablewrap { position: relative; }
+.tablewrap::after {
+  content: ""; position: absolute; top: 1px; right: 1px; bottom: 1px; width: 26px;
+  pointer-events: none; border-radius: 0 16px 16px 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(247,249,252,.92));
+}
+
+/* --- 読みもの: 章TOC + タップできるカード --- */
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 30px; }
+.toc a {
+  font-size: 13px; font-weight: 700; color: #3D5A94; text-decoration: none;
+  background: rgba(255,255,255,.65); border: 1px solid var(--glass-border);
+  padding: 8px 14px; border-radius: 999px; line-height: 1;
+}
+.toc a:hover, .toc a:focus-visible { background: rgba(59,111,212,.12); color: var(--blue); }
+
+.readlist { display: grid; gap: 11px; margin: 10px 0 36px; }
+.rl-item {
+  display: flex; align-items: center; gap: 12px; padding: 16px 16px;
+  border-radius: 18px; text-decoration: none; color: var(--ink);
+  background: var(--glass); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 20px rgba(58,82,128,.08);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.rl-item:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(58,82,128,.15); border-color: rgba(127,166,232,.65); }
+.rl-item:active { transform: translateY(0); box-shadow: 0 6px 14px rgba(58,82,128,.1); }
+.rl-body { flex: 1 1 auto; min-width: 0; }
+.rl-t { display: block; font-weight: 800; font-size: 16px; line-height: 1.5; }
+.rl-d { display: block; color: var(--ink-soft); font-size: 14px; line-height: 1.65; margin-top: 5px; }
+.rl-chev { flex: 0 0 auto; color: var(--blue-soft); font-weight: 900; font-size: 20px; line-height: 1; }
+
+/* --- サポートFAQ: アコーディオン（.faq を流用）本文を読みやすく --- */
+.faq summary { font-size: 16px; line-height: 1.5; }
+.faq details p { font-size: 15px; line-height: 1.8; color: var(--ink); }
+
+/* --- ヘッダー/フッター: タップ領域とサイズ --- */
+nav.site a { font-size: 13px; padding: 8px 2px; margin-left: 13px; }
+/* 3リンクが狭幅で見切れないよう詰める */
+@media (max-width: 430px){
+  header.site .wrap { padding: 0 14px; }
+  .brand { font-size: 13px; }
+  .brand .pin { width: 25px; height: 25px; }
+  nav.site a { font-size: 12px; margin-left: 9px; }
+}
+@media (max-width: 340px){
+  nav.site a { font-size: 11.5px; margin-left: 7px; }
+}
+footer.site { font-size: 13px; }
+footer.site nav { gap: 14px 18px; }
+footer.site nav a { text-decoration: none; padding: 4px 0; }
+footer.site nav a:hover { color: var(--blue); }
+
+/* --- 記事末CTA: 少し読みやすく --- */
+.app-cta p { font-size: 14.5px; line-height: 1.75; }
+
+/* --- フォーカスリング（アクセシビリティ） --- */
+a:focus-visible, summary:focus-visible, .rl-item:focus-visible {
+  outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 8px;
+}
+
+/* 記事本文の“戻る/次へ”ナビ・パンくず */
+.docnav { margin: 0 0 20px; font-size: 13px; }
+.docnav a { color: var(--ink-soft); text-decoration: none; font-weight: 600; }
+.docnav a:hover { color: var(--blue); }
