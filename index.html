@@ -9,6 +9,7 @@
 <meta property="og:title" content="クルマピン — 停めた場所に、必ず戻れる。">
 <meta property="og:description" content="駐車位置をワンタップ記録。立体駐車場・地下でも迷わず車に戻れるiPhoneアプリ。">
 <meta property="og:type" content="website">
+<script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,7 +51,7 @@
 }
 </script>
 </head>
-<body>
+<body class="has-map">
 <header class="site">
   <div class="wrap">
     <a class="brand" href="./"><span class="pin">P</span>クルマピン</a>
@@ -62,143 +63,203 @@
   </div>
 </header>
 
+<div class="center-veil" aria-hidden="true"></div>
+
+<!-- HERO -->
 <div class="hero">
-  <div class="wrap">
-    <div>
-      <h1>停めた場所に、<br><span class="accent">必ず戻れる。</span></h1>
-      <p class="lead">駐車位置をワンタップ記録。立体駐車場・地下でも迷わない、いちばんシンプルな駐車位置メモアプリ。</p>
-      <div class="hero-badges">
-        <span>開くだけで自動保存</span>
-        <span>屋内・立駐に強い</span>
-        <span>サーバ送信なし</span>
-        <span>登録不要</span>
+  <div class="map" aria-hidden="true">
+    <div class="rd h" style="top: 24%; rotate: -3deg;"></div>
+    <div class="rd h ave" style="top: 55%; rotate: 2deg;"></div>
+    <div class="rd h" style="top: 78%; rotate: -1deg;"></div>
+    <div class="rd v" style="left: 22%; rotate: 4deg;"></div>
+    <div class="rd v" style="left: 58%; rotate: -2deg;"></div>
+    <div class="rd v" style="left: 84%; rotate: 3deg;"></div>
+    <div class="blk" style="left: 4%; top: 8%; width: 14%; height: 12%;"></div>
+    <div class="blk park" style="left: 28%; top: 10%; width: 24%; height: 10%;"></div>
+    <div class="blk" style="left: 64%; top: 6%; width: 16%; height: 13%;"></div>
+    <div class="blk" style="left: 6%; top: 32%; width: 12%; height: 17%;"></div>
+    <div class="blk water" style="left: 30%; top: 30%; width: 22%; height: 19%;"></div>
+    <div class="blk" style="left: 63%; top: 33%; width: 17%; height: 16%;"></div>
+    <div class="blk" style="left: 88%; top: 30%; width: 10%; height: 20%;"></div>
+    <div class="blk" style="left: 5%; top: 62%; width: 13%; height: 12%;"></div>
+    <div class="blk" style="left: 27%; top: 63%; width: 26%; height: 11%;"></div>
+    <div class="blk park" style="left: 64%; top: 61%; width: 15%; height: 13%;"></div>
+    <div class="blk" style="left: 25%; top: 84%; width: 20%; height: 12%;"></div>
+    <div class="blk" style="left: 60%; top: 85%; width: 22%; height: 11%;"></div>
+  </div>
+  <div class="pin-spot" aria-hidden="true">
+    <div class="ring"></div>
+    <div class="shadow"></div>
+    <div class="body"><span>P</span></div>
+  </div>
+  <div class="col hero-panel">
+    <div class="hero-copy">
+      <div class="eyebrow">駐車位置メモアプリ</div>
+      <h1>停めた場所に、<br><span class="hl">必ず戻れる。</span></h1>
+      <p class="lead">開いた瞬間、駐車位置を自動保存。地下でも立駐でも、あなたの車まで迷わず案内。</p>
+      <div class="badge-strip">
+        <span>開くだけで自動保存</span><span>屋内・立駐に強い</span><span>サーバ送信なし</span>
       </div>
-      <div class="cta-row">
-        <span class="store-badge soon"><span class="apple"></span>App Store にて近日公開</span>
-      </div>
-      <p class="cta-note" style="margin-top:12px">iOS 17以降・無料でご利用いただけます</p>
+      <span class="store-pill soon">App Store にて近日公開</span>
     </div>
-    <div class="phone-col">
-      <div class="phone" role="img" aria-label="クルマピンの画面イメージ: 地図上のピンと屋内メモ、車までの距離表示">
-        <div class="screen">
-          <div class="road"></div>
-          <span class="chip">🅿️ B2F・柱23のそば</span>
-          <div class="pin-shadow"></div>
-          <div class="pin-drop"></div>
-          <div class="bottom-card">
-            <div class="t1">あなたの車まで</div>
-            <div class="t2">120m・徒歩2分</div>
-            <div class="bar">車に戻る</div>
+    <div class="hero-shot">
+      <div class="shot">
+        <div class="scr">
+          <div class="toast">✓ 駐車位置を保存しました</div>
+          <div class="pinhead"><span>P</span></div>
+          <div class="sheet">
+            <div class="s1">あなたの車まで</div>
+            <div class="s2">120m・徒歩2分</div>
+            <div class="btn">車に戻る</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue">SCROLL<span class="arr">↓</span></div>
+  </div>
+</div>
+
+<!-- 01 屋内 -->
+<section class="feature-sec">
+  <div class="wash"></div>
+  <div class="col">
+    <div class="num rv"><i>01</i>屋内・立体駐車場</div>
+    <h2 class="rv">GPSが効かない場所で、<br>いちばん強い。</h2>
+    <p class="lead rv">地下・立体駐車場では衛星の電波が届かない。だからクルマピンは「階数・柱番号・写真」という人間が読める記録に切り替える。</p>
+    <div class="glass rv">
+      <div class="tag">屋内モード</div>
+      <h3>「B2F・柱23のそば」まで残す</h3>
+      <p>GPS圏外を検知すると自動で屋内モードへ。ワンタップで階数と柱番号、写真5枚と音声メモ。</p>
+      <div class="shot">
+        <div class="scr indoor">
+          <div class="chips"><b class="on">B2F</b><b>B1F</b><b>1F</b><b>2F</b></div>
+          <div class="pillar">23</div>
+          <div class="sheet">
+            <div class="s1">屋内メモ</div>
+            <div class="s2">B2F・柱23</div>
+            <div class="btn">写真を追加</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<section>
-  <div class="wrap">
-    <span class="sec-label">Features</span>
-    <h2>クルマピンの3つの強み</h2>
-    <p class="sec-lead">「どこに停めたっけ？」をなくすために、覚える手間そのものをなくしました。</p>
-    <div class="features">
-      <div class="feature">
-        <div class="icon">🏢</div>
-        <h3>屋内・立体駐車場に強い</h3>
-        <p>GPSが効かない場所では屋内モードに切り替え。階数・柱番号・写真で「B2Fの23番柱のそば」まで残せます。</p>
-      </div>
-      <div class="feature">
-        <div class="icon">👆</div>
-        <h3>覚えることゼロ</h3>
-        <p>アプリを開いた瞬間に現在地を自動で仮保存。ロック画面のウィジェットからもワンタップで記録できます。</p>
-      </div>
-      <div class="feature">
-        <div class="icon">🔒</div>
-        <h3>プライバシー最優先</h3>
-        <p>位置情報はあなたの端末とiCloudにのみ保存され、開発者や第三者のサーバには送信されません。登録も不要。</p>
+<!-- 02 0タップ -->
+<section class="feature-sec">
+  <div class="wash"></div>
+  <div class="col">
+    <div class="num rv"><i>02</i>0タップ保存</div>
+    <h2 class="rv">覚えることは、<br>もう何もない。</h2>
+    <p class="lead rv">アプリを開いた瞬間に現在地を仮保存。ロック画面ウィジェットなら、ポケットの中で完結する。</p>
+    <div class="glass rv">
+      <div class="tag">開く＝保存完了</div>
+      <h3>降車したら、開くだけ</h3>
+      <p>30秒後に精度を自動で上げて確定。精算忘れを防ぐ料金タイマーもセットできます。</p>
+      <div class="shot">
+        <div class="scr">
+          <div class="toast">✓ 駐車位置を保存しました</div>
+          <div class="pinhead"><span>P</span></div>
+          <div class="sheet">
+            <div class="s1">あなたの車まで</div>
+            <div class="s2">120m・徒歩2分</div>
+            <div class="btn">車に戻る</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="alt">
-  <div class="wrap">
-    <span class="sec-label">How it works</span>
-    <h2>使い方は3ステップ</h2>
-    <p class="sec-lead">説明書はいりません。停めたら開く、それだけ。</p>
-    <div class="steps" style="margin-top: 30px;">
-      <div class="step">
-        <h3>停めたら、開く</h3>
-        <p>アプリを開いた瞬間に現在地を自動で仮保存。ロック画面ウィジェットならワンタップです。</p>
+<!-- 03 使い方 -->
+<section class="feature-sec">
+  <div class="wash"></div>
+  <div class="col">
+    <div class="num rv"><i>03</i>使い方</div>
+    <h2 class="rv">やることは、3つだけ。</h2>
+  </div>
+  <div class="snap-row rv">
+    <div class="glass"><div class="tag">STEP 1</div><h3>停めたら、開く</h3><p>それだけで仮保存。ウィジェットならワンタップ。</p></div>
+    <div class="glass"><div class="tag">STEP 2</div><h3>屋内なら、ひとこと</h3><p>階数と柱番号をさっと。写真1枚で完璧。</p></div>
+    <div class="glass"><div class="tag">STEP 3</div><h3>迷わず、戻る</h3><p>方向と距離を表示。「見つかりました！」で完了。</p></div>
+  </div>
+  <div class="swipe-hint">SWIPE →</div>
+</section>
+
+<!-- 04 比較 -->
+<section class="feature-sec">
+  <div class="wash"></div>
+  <div class="col">
+    <div class="num rv"><i>04</i>地図アプリとの違い</div>
+    <h2 class="rv">「駐車位置を保存」と、<br>何が違う？</h2>
+    <p class="lead rv">標準機能で足りる方はそれで十分です。クルマピンは「屋内」と「手間ゼロ」に振り切りました。</p>
+    <div class="vs rv">
+      <div class="colm a">
+        <h4>クルマピン</h4>
+        <ul>
+          <li>立駐の階数・柱番号</li>
+          <li>写真5枚＋音声メモ</li>
+          <li>精算忘れタイマー</li>
+          <li>開くだけ（0タップ）</li>
+        </ul>
       </div>
-      <div class="step">
-        <h3>屋内なら、ひとこと足す</h3>
-        <p>立体・地下駐車場では階数や柱番号をさっと記録。写真を1枚撮っておけば完璧です。</p>
-      </div>
-      <div class="step">
-        <h3>迷わず、戻る</h3>
-        <p>「車に戻る」を押すと方向と距離を表示。到着したら「見つかりました！」で完了です。</p>
+      <div class="colm b">
+        <h4>Gマップ / 標準マップ</h4>
+        <ul>
+          <li>平面上の1点のみ</li>
+          <li>階数は残せない</li>
+          <li>タイマーなし</li>
+          <li>手動タップが必要</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <span class="sec-label">Comparison</span>
-    <h2>Googleマップの「駐車位置を保存」との違い</h2>
-    <p class="sec-lead">標準機能で足りる方はそれで十分です。クルマピンは「屋内」と「手間ゼロ」に振り切りました。</p>
-    <div class="tablewrap">
-      <table class="compare">
-        <thead>
-          <tr><th></th><th>クルマピン</th><th>Googleマップ / 標準マップ</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>地図上の位置記録</td><td class="good">○</td><td>○</td></tr>
-          <tr><td>立体駐車場の階数・柱番号</td><td class="good">○ 屋内モードで記録</td><td>×（平面上の1点のみ）</td></tr>
-          <tr><td>写真・音声メモ</td><td class="good">○ 写真5枚＋音声</td><td>△（写真のみ・手動）</td></tr>
-          <tr><td>精算忘れ防止の料金タイマー</td><td class="good">○</td><td>×</td></tr>
-          <tr><td>保存の手間</td><td class="good">開くだけ（0タップ）</td><td>現在地をタップ→保存を選択</td></tr>
-          <tr><td>位置情報の扱い</td><td class="good">端末とiCloudのみ</td><td>各社のアカウントに保存</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap-narrow faq">
-    <span class="sec-label">FAQ</span>
-    <h2>よくある質問</h2>
-    <details>
+<!-- 05 FAQ -->
+<section class="feature-sec">
+  <div class="wash"></div>
+  <div class="col faq">
+    <div class="num rv"><i>05</i>よくある質問</div>
+    <h2 class="rv">気になること、ぜんぶ。</h2>
+    <details class="rv">
       <summary>立体駐車場・地下駐車場でも使えますか？</summary>
       <p>はい、本アプリの得意分野です。GPSが届かない場所では「屋内モード」に切り替わり、階数・柱番号・写真で停めた場所を記録できます。</p>
     </details>
-    <details>
+    <details class="rv">
       <summary>保存し忘れが心配です。</summary>
       <p>アプリを開いた瞬間に現在地が自動で仮保存されます（0タップ）。車を降りた直後に開くだけで記録が残ります。ロック画面のウィジェットからも保存できます。</p>
     </details>
-    <details>
+    <details class="rv">
       <summary>位置情報はどこかに送られますか？</summary>
       <p>いいえ。位置情報はあなたの端末とiCloudにのみ保存され、開発者や第三者のサーバには送信されません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
     </details>
-    <details>
+    <details class="rv">
       <summary>機種変更したらデータは消えますか？</summary>
       <p>iCloud同期を有効にしていれば、同じApple Accountでサインインした新しい端末に自動で引き継がれます。</p>
     </details>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="cta-final">
-      <h2>もう、駐車場で迷わない。</h2>
-      <p>クルマピンは App Store にて近日公開。無料でご利用いただけます。</p>
-      <span class="store-badge soon"><span class="apple"></span>App Store にて近日公開</span>
-      <p class="cta-note">公開までの間、<a href="blog/" style="color:#fff">車を見失ったときの探し方の記事</a>もどうぞ</p>
+<!-- プライバシー -->
+<section class="feature-sec">
+  <div class="wash"></div>
+  <div class="col">
+    <div class="privacy-panel rv">
+      <div class="big">位置情報は、あなたの端末とiCloudにしか存在しない。</div>
+      <div class="sub">開発者のサーバには何も送信されません。アカウント登録もありません。<a href="privacy.html">プライバシーポリシー</a></div>
     </div>
   </div>
 </section>
+
+<!-- FINAL -->
+<div class="final">
+  <div class="col">
+    <h2 class="rv">もう、駐車場で迷わない。</h2>
+    <p class="rv">クルマピンは App Store にて近日公開・無料。<br>公開までの間、<a href="blog/">車を見失ったときの探し方の記事</a>もどうぞ。</p>
+    <span class="store-pill soon rv">App Store にて近日公開</span>
+  </div>
+</div>
 
 <footer class="site">
   <div class="wrap">
@@ -211,5 +272,12 @@
     <p>© 2026 クルマピン</p>
   </div>
 </footer>
+
+<script>
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
