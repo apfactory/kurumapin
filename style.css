@@ -382,21 +382,19 @@ a:focus-visible, summary:focus-visible, .rl-item:focus-visible {
 .pagemap { position: fixed; inset: 0; z-index: 0; }         /* .map の見た目を継承し全面固定 */
 body:has(.pagemap) { background: #E7EDF6; }
 
-/* コンテンツ本体＝地図の上に浮く中央パネル（すりガラス） */
+/* コンテンツ本体＝地図の上に浮く中央パネル（TOPのcenter-veil同様ソリッド背景） */
 body:has(.pagemap) .doc {
   position: relative; z-index: 2;
-  background: rgba(247, 249, 252, .9);
-  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  background: var(--ground);
 }
 body:has(.pagemap) .doc::before { display: none; }          /* 既存washは地図があるので不要 */
 
-/* フッターも中央パネル幅で地図に浮かせる */
-body:has(.pagemap) footer.site { position: relative; z-index: 2; background: transparent; border-top: none; }
+/* フッターをコンテンツパネルと隙間なく連結（透明な上余白による地図の切れ目を除去） */
+body:has(.pagemap) footer.site { position: relative; z-index: 2; background: transparent; border-top: none; padding: 0; }
 body:has(.pagemap) footer.site .wrap {
-  background: rgba(247, 249, 252, .92);
-  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  background: var(--ground);
   border-top: 1px solid rgba(198, 210, 228, .5);
-  padding-top: 26px; padding-bottom: 40px;
+  padding-top: 24px; padding-bottom: 44px;
 }
 
 /* デスクトップ: 中央パネルに“壁”（境界＋影）＝TOPのcenter-veil風 */
