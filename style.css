@@ -274,7 +274,7 @@ a.store-badge { cursor: pointer; }
    ======================================================================= */
 
 /* --- 本文タイポグラフィの底上げ（.doc = 記事/privacy/support/読みもの） --- */
-.doc.wrap, .doc.wrap-narrow { max-width: 600px; padding: 0 22px; }
+.doc.wrap, .doc.wrap-narrow { max-width: 600px; margin-left: auto; margin-right: auto; padding: 0 22px; }
 @media (max-width: 400px){ .doc.wrap, .doc.wrap-narrow { padding: 0 18px; } }
 /* コンテンツページ（.docを含む）のみヘッダー/フッターも600pxに揃える（LPは無影響） */
 body:has(.doc) header.site .wrap, body:has(.doc) footer.site .wrap { max-width: 600px; }
@@ -374,3 +374,41 @@ a:focus-visible, summary:focus-visible, .rl-item:focus-visible {
 .docnav { margin: 0 0 20px; font-size: 13px; }
 .docnav a { color: var(--ink-soft); text-decoration: none; font-weight: 600; }
 .docnav a:hover { color: var(--blue); }
+
+/* =======================================================================
+   v3.1: サポート/プライバシーをTOPと統一（地図背景＋中央パネル）
+   ——.pagemap を持つページだけに適用。LP/読みもの/記事50本は無影響
+   ======================================================================= */
+.pagemap { position: fixed; inset: 0; z-index: 0; }         /* .map の見た目を継承し全面固定 */
+body:has(.pagemap) { background: #E7EDF6; }
+
+/* コンテンツ本体＝地図の上に浮く中央パネル（すりガラス） */
+body:has(.pagemap) .doc {
+  position: relative; z-index: 2;
+  background: rgba(247, 249, 252, .9);
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+}
+body:has(.pagemap) .doc::before { display: none; }          /* 既存washは地図があるので不要 */
+
+/* フッターも中央パネル幅で地図に浮かせる */
+body:has(.pagemap) footer.site { position: relative; z-index: 2; background: transparent; border-top: none; }
+body:has(.pagemap) footer.site .wrap {
+  background: rgba(247, 249, 252, .92);
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  border-top: 1px solid rgba(198, 210, 228, .5);
+  padding-top: 26px; padding-bottom: 40px;
+}
+
+/* デスクトップ: 中央パネルに“壁”（境界＋影）＝TOPのcenter-veil風 */
+@media (min-width: 720px){
+  body:has(.pagemap) .doc {
+    border-left: 1px solid rgba(255, 255, 255, .92);
+    border-right: 1px solid rgba(255, 255, 255, .92);
+    box-shadow: 0 0 60px rgba(58, 82, 128, .16);
+    min-height: calc(100vh - 55px);
+  }
+  body:has(.pagemap) footer.site .wrap {
+    border-left: 1px solid rgba(255, 255, 255, .92);
+    border-right: 1px solid rgba(255, 255, 255, .92);
+  }
+}
