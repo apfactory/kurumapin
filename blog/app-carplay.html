@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CarPlayで駐車位置を記録する方法｜自動で残す仕組みと限界【2026】</title>
+<meta name="description" content="CarPlayを切った瞬間、iPhoneは駐車位置を自動で記録できます。その仕組みと必要な設定を手順で解説し、CarPlay連携だけでは越えられない限界（立体・地下・未接続の車）と、降車時に自動化する考え方まで正直に整理します。">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"Article","headline":"CarPlayで駐車位置を自動記録する仕組みと限界","datePublished":"2026-07-12","dateModified":"2026-07-12","author":{"@type":"Organization","name":"クルマピン"},"publisher":{"@type":"Organization","name":"クルマピン"} }
+</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="pin">P</span>クルマピン</a>
+    <nav class="site">
+      <a href="./">読みもの</a>
+      <a href="../support.html">サポート</a>
+      <a href="../privacy.html">プライバシー</a>
+    </nav>
+  </div>
+</header>
+
+<article class="doc wrap-narrow">
+  <h1>CarPlayで駐車位置を記録する方法<br>自動で残す仕組みと、その限界</h1>
+  <p class="updated">公開: 2026-07-12 ・ クルマピン編集部</p>
+
+  <p>「CarPlayで駐車位置を記録できる」と聞いて、専用アプリをCarPlayの画面に映して操作するイメージを持つ方は多いのですが、実際の仕組みは少し違います。<strong>ポイントは、車を降りてCarPlayの接続が切れる“その瞬間”です</strong>。iPhoneはこのタイミングを「ここで駐車した」と判断して、位置を自動で残せるのです。</p>
+  <p>この記事では、まずCarPlay連携で使える標準機能のやり方を手順で整理し、そのうえで<strong>接続が切れる方式だからこそ生まれる限界</strong>と、降車のたびに確実に記録を残すための考え方まで、できること・できないことを正直にお伝えします。</p>
+
+  <h2>仕組み: CarPlayが“切れた瞬間”を合図にする</h2>
+  <p>iPhoneの標準マップには、駐車位置を自動で記録する機能があります。エンジンを切って車から離れ、<strong>iPhoneと車のCarPlay（またはBluetooth）の接続が切れると、その地点に「駐車中の車」のピンが自動で立つ</strong>という仕組みです。あなたがボタンを押す必要はありません。降りて歩き出すだけで、地図に停めた場所が残ります。</p>
+  <p>裏を返すと、CarPlayは走行中に車の画面へiPhoneを映すための機能なので、<strong>降車後にCarPlayを操作して記録するわけではない</strong>ということ。記録の主役は「接続が切れた」というイベントそのものです。ここを押さえると、後述する限界も腑に落ちます。</p>
+
+  <h2>設定: 3つをオンにしておく</h2>
+  <p>自動記録を効かせるには、事前に次の設定を確認しておきます。一度やれば以降は自動です。</p>
+  <ul>
+    <li><strong>位置情報サービスをオン</strong>（設定 &gt; プライバシーとセキュリティ &gt; 位置情報サービス）</li>
+    <li><strong>「利用頻度の高い場所（Significant Locations）」をオン</strong>（同 &gt; システムサービス内）</li>
+    <li><strong>「駐車位置を表示」をオン</strong>にする</li>
+  </ul>
+  <p>あとは車を降りるだけ。確認したいときはマップで「駐車中の車」を検索すれば、地図上の位置とメモを見られます。</p>
+
+  <h2>CarPlay連携だけでは越えられない3つの限界</h2>
+  <p>手間なく自動で残せるのは大きな魅力ですが、「接続が切れたら記録する」という方式ゆえの弱点があります。選ぶ前に知っておくと後悔しません。</p>
+  <ul>
+    <li><strong>CarPlay/Bluetoothに繋いでいない車では記録されない</strong>——レンタカーや、接続していないコインパーキングでは「駐車中の車」が作られないことがあります。合図となる“切断”が起きないためです。</li>
+    <li><strong>階数・柱番号は残らない</strong>——立体・地下駐車場ではGPSの電波が遮られ、ピンの位置そのものがあてになりません。「上か下か」までは案内できず、標準機能はあくまで屋外向きです。</li>
+    <li><strong>“見た目”の手がかりが残らない</strong>——目印の看板や柱の色、入口の位置といった、人間が読んで安心できる情報は自動記録には含まれません。</li>
+  </ul>
+
+  <h2>考え方: 「降りたら自動で残る」を全部の車に広げる</h2>
+  <p>CarPlayの自動記録が教えてくれるのは、<strong>「降車の瞬間に手を動かさずに残す」のが続けられる唯一のやり方</strong>だということ。荷物や子どもで頭がいっぱいの降車時に、ボタンを押す手順は現実には忘れます。だからこそ、接続の有無に関わらず同じ手軽さで残せる仕組みがあると安心です。屋外の平面駐車場で、いつも同じ車に乗るなら、標準のCarPlay連携で十分。困るのは、繋いでいない車や、GPSが効かない立体・地下です。ここだけは<strong>「B2Fの23番柱のそば」のような人間が読めるメモと写真</strong>で補うのが確実です。</p>
+
+  <div class="app-cta">
+    <div class="t">🅿️ 接続していない車でも、降りるだけで残すなら「クルマピン」</div>
+    <p>アプリを開くだけで現在地を自動保存。GPSが効かない立体・地下駐車場では階数・柱番号・写真で「B2Fの23番柱のそば」まで残せます。位置情報はあなたの端末とiCloudにのみ保存され、開発者や第三者のサーバには送信されません。</p>
+    <a class="store-badge soon" href="../">App Store にて近日公開 — 詳しく見る</a>
+  </div>
+
+  <h2>あわせて読みたい</h2>
+  <ul>
+    <li><a href="compare.html">駐車位置を記録するiPhoneアプリの選び方【2026】</a></li>
+    <li><a href="find-plan-venue.html">車で行く場所、駐車場はどこに停める？</a></li>
+  </ul>
+</article>
+
+<footer class="site">
+  <div class="wrap">
+    <nav>
+      <a href="../">ホーム</a>
+      <a href="./">読みもの</a>
+      <a href="../support.html">サポート</a>
+      <a href="../privacy.html">プライバシーポリシー</a>
+    </nav>
+    <p>© 2026 クルマピン</p>
+  </div>
+</footer>
+</body>
+</html>
